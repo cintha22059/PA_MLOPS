@@ -1,11 +1,11 @@
 # Submission 1: Nama Proyek Anda
-Nama:
+Nama: Cintha Hafrida Putri
 
-Username dicoding:
+Username dicoding: cintha_bang
 
 | | Deskripsi |
 | ----------- | ----------- |
-| Dataset | [nama dataset](https://www.kaggle.com/) |
+| Dataset | [Heart Disease Failure](https://www.kaggle.com/datasets/andrewmvd/heart-failure-clinical-data) |
 | Masalah | Deskripsi masalah yang di angkat |
 | Solusi machine learning | Deskripsi solusi machine learning yang akan dibuat |
 | Metode pengolahan | Deskripsi metode pengolahan data yang digunakan |
