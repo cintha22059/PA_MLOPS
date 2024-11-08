@@ -1,17 +1,17 @@
-# Submission 1: Nama Proyek Anda
-Nama: Cintha Hafrida Putri
+# Submission 1: Heart Disease Prediction Model
 
-Username dicoding: cintha_bang
+**Nama:** Cintha Hafrida Putri  
+**Username Dicoding:** cintha_bang
 
-| | Deskripsi |
-| ----------- | ----------- |
-| Dataset | [Heart Disease Failure](https://www.kaggle.com/datasets/andrewmvd/heart-failure-clinical-data) |
-| Masalah | Deskripsi masalah yang di angkat |
-| Solusi machine learning | Deskripsi solusi machine learning yang akan dibuat |
-| Metode pengolahan | Deskripsi metode pengolahan data yang digunakan |
-| Arsitektur model | Deskripsi arsitektur model yang diguanakan |
-| Metrik evaluasi | Deksripsi metrik yang digunakan untuk mengevaluasi performa model |
-| Performa model | Deksripsi performa model yang dibuat |
-| Opsi deployment | Deksripsi tentang opsi deployment |
-| Web app | Tautan web app yang digunakan untuk mengakses model serving. Contoh: [nama-model](https://model-resiko-kredit.herokuapp.com/v1/models/model-resiko-kredit/metadata)|
-| Monitoring | Deksripsi terkait hasil monitoring dari model serving |
+| **Attribute**        | **Description** |
+|----------------------|-----------------|
+| **Dataset**          | [Heart Disease Failure](https://www.kaggle.com/datasets/andrewmvd/heart-failure-clinical-data) |
+| **Masalah**          | Penyakit jantung merupakan salah satu penyebab utama kematian di seluruh dunia, dengan angka kematian yang meningkat seiring bertambahnya usia dan kondisi medis yang memperburuk kesehatan jantung. Identifikasi dini terhadap pasien dengan risiko tinggi mengalami *death_event* atau kematian mendadak sangat penting bagi tenaga medis, karena dapat memungkinkan penanganan yang cepat dan tindakan pencegahan yang lebih baik. Data klinis yang tersedia memungkinkan penerapan metode *machine learning* untuk mendeteksi pasien dengan risiko tinggi berdasarkan pola-pola dalam data medis mereka. Oleh karena itu, tujuan dari proyek ini adalah mengembangkan model prediktif yang akurat dan andal untuk mendeteksi potensi *death_event* pada pasien penyakit jantung, sehingga mendukung langkah-langkah medis preventif. |
+| **Solusi Machine Learning** | Solusi *machine learning* yang diusulkan adalah merancang sebuah *pipeline* yang mencakup tahapan preprocessing data, pelatihan model, evaluasi performa, dan deployment model menggunakan TensorFlow Serving. *Pipeline* ini akan dikelola menggunakan TFX (*TensorFlow Extended*) untuk memastikan kelancaran alur kerja. |
+| **Metode Pengolahan** | Metode pengolahan data pada pipeline ini meliputi:<br> - **Data Ingestion:** Membaca dan membagi data menjadi subset *train* dan *eval*.<br> - **Statistical Analysis:** Menghasilkan statistik data awal untuk memahami distribusi fitur.<br> - **Schema Generation:** Membuat skema data yang mencakup jenis data dan rentang nilai yang valid.<br> - **Data Validation:** Memvalidasi data terhadap skema untuk mendeteksi anomali.<br> - **Data Transformation:** Melakukan *preprocessing*, seperti normalisasi dan *encoding*.<br> - **Hyperparameter Tuning:** Mengoptimalkan *hyperparameter* model menggunakan Tuner.<br> - **Model Training:** Melatih model dengan data yang telah ditransformasi dan dievaluasi.<br> Metode ini memastikan data siap untuk pelatihan, evaluasi, dan deployment model. |
+| **Arsitektur Model** | Arsitektur model yang digunakan adalah *Neural Network (NN)* dengan beberapa lapisan *fully connected*. Berikut adalah struktur model yang diterapkan:<br> - **Input Layer:** Menerima fitur-fitur yang telah diproses.<br> - **Hidden Layers:** Terdiri dari tiga lapisan dense dengan fungsi aktivasi ReLU.<br> - **Output Layer:** Lapisan dense dengan satu unit dan fungsi aktivasi sigmoid.<br> - **Optimizer:** Adam.<br> - **Loss Function:** *binary_crossentropy*.<br> Selain itu, terdapat tuner yang memiliki struktur arsitektur serupa dengan penambahan lapisan *dropout*. |
+| **Metrik Evaluasi** | Metrik yang digunakan untuk menilai performa model meliputi:<br> - **Precision:** Menunjukkan ketepatan model dalam memprediksi kategori positif.<br> - **Recall:** Mengukur seberapa baik model dalam mendeteksi semua instance positif yang benar-benar ada.<br> - **BinaryAccuracy:** Akurasi yang secara khusus dirancang untuk kasus klasifikasi biner.<br> Model ini dianggap "blessed" jika BinaryAccuracy melebihi 0,8. |
+| **Performa Model**  | Deskripsi performa model yang dibuat |
+| **Opsi Deployment** | Model yang sudah dibuat dapat di-*deploy* dengan beberapa opsi, seperti Heroku dan Railway. Pada proyek ini, deployment model dilakukan menggunakan platform Railway. |
+| **Web App**         | Tautan web app yang digunakan untuk mengakses model serving. Contoh: [nama-model](https://model-resiko-kredit.herokuapp.com/v1/models/model-resiko-kredit/metadata) |
+| **Monitoring**      | Monitoring model yang sudah di-*deploy* dilakukan menggunakan Prometheus dan Grafana. Hasil monitoring menunjukkan kinerja yang baik, dengan setiap request prediksi tercatat melalui metrik seperti `request_count` dan `session_created`. Sejak sesi dimulai, model beroperasi stabil tanpa mengalami *downtime*. |
